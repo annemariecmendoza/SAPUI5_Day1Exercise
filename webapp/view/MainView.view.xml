@@ -1,0 +1,7 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="exercise1surveyform.controller.MainView">
+    <Page id="page" title="{i18n>title}">
+    <content>
+        <Text xmlns="sap.m" text="Name:" id="text2"/>
+    </content>
+    </Page>
+</mvc:View>
