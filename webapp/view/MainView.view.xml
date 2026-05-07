@@ -1,7 +1,73 @@
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="exercise1surveyform.controller.MainView">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" controllerName="exercise1surveyform.controller.MainView">
     <Page id="page" title="{i18n>title}">
+    <footer>
+        <Toolbar width="100%" id="toolbar1">
+            <content>
+                <ToolbarSpacer id="spacer0"/>
+                <Button xmlns="sap.m" text="{i18n>save}" id="button0" activeIcon="sap-icon://save" type="Emphasized" icon="sap-icon://save"/>
+            </content>
+        </Toolbar>
+    </footer>
     <content>
-        <Text xmlns="sap.m" text="Name:" id="text2"/>
+        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form1" labelSpanL="3" labelSpanM="4" columnsL="1" adjustLabelSpan="false" emptySpanL="0" emptySpanM="0">  <!--Sets the grid alignment and label span-->
+            <sap.ui.layout.form:content>
+
+                <Label xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" text="{i18n>name}" id="NameLabel"/>
+                <Input xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" id="NameInput">
+                    <layoutData>
+                        <l:GridData id="Grid1" span="L6 M6 S12"/>  <!--Span L-for large M-for medium S-small; determines size for responsiveness out of 12 grid-->
+                    </layoutData>
+                </Input> 
+
+                <Label xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" text="{i18n>streetNo}" id="StreetNoLabel"/>
+                <Input xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" id="StreetNoInput">
+                    <layoutData>
+                        <l:GridData id="Grid2" span="L4 M4 S12"/>
+                    </layoutData>
+                </Input> 
+                <Input xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" id="StreetInput">
+                    <layoutData>
+                        <l:GridData id="Grid3" span="L2 M2 S12"/>
+                    </layoutData>
+                </Input> 
+                            
+                <Label xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" text="{i18n>zipCity}" id="ZipCityLabel"/>
+                <Input xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" id="ZipCodeInput">  
+                    <layoutData>
+                        <l:GridData id="Grid4" span="L2 M2 S12"/>
+                    </layoutData>
+                </Input> 
+                <Input xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" id="CityInput">
+                    <layoutData>
+                        <l:GridData id="Grid5" span="L4 M4 S12"/>
+                    </layoutData>
+                </Input> 
+
+                <Label xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" text="{i18n>country}" id="CountryLabel"/>
+                <ComboBox xmlns="sap.m" id="CountryBox">
+                    <items>
+                        <core:Item xmlns:core="sap.ui.core" key="item-1-key" text="England" id="item0"/>
+                        <core:Item xmlns:core="sap.ui.core" key="item-2-key" text="Germany" id="item1"/>
+                        <core:Item xmlns:core="sap.ui.core" key="item-2-key" text="USA" id="item2"/>
+                        <core:Item xmlns:core="sap.ui.core" key="item-2-key" text="Philippines" id="item3"/>
+                    </items>
+                    <layoutData>
+                        <l:GridData id="Grid6" span="L6 M6 S12"/>  <!--Span L-for large M-for medium S-small; determines size for responsiveness out of 12 grid-->
+                    </layoutData>
+                </ComboBox>
+                   
+                <Label id="clear" text=""/>
+                <Button xmlns="sap.m" text="{i18n>clear}" id="ClearButton" press=".onPress">
+                    <layoutData>
+                        <l:GridData id="Grid7" span="L1 M2 S6"/>  <!--Span L-for large M-for medium S-small; determines size for responsiveness out of 12 grid-->
+                    </layoutData>
+                </Button>
+
+
+            </sap.ui.layout.form:content>
+        </sap.ui.layout.form:SimpleForm>
+
+
     </content>
     </Page>
 </mvc:View>
